@@ -2,56 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c2aa981-cd71-4bc0-b6de-03d632338fd0" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/pdimg/1D185C275A7A4B83876E9B2BBCF07DB6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdimg/1E9B1CD2CD994E93A2D9D112092E5DA8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdimg/244F5F06474D4FFB8B0730371D0BD58D.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdimg/48DB42461178466EA703FFF92EF4E9FC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdimg/62EDDC43FCDD4F17A37883F6749E6B6C.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdimg/699BFB34BA2D4E8BAF9F4EEFD26107A0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdimg/73744BE842A1474DBF90FF6BA2321B49.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdimg/740056A6E37F4DF0AB230AC76AF6B1EC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdimg/8CDA2951DB1545AF9A8A82953AC26076.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdimg/9E983C1B201F413D96801825A6B67089.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdimg/A794695EBD6A4A24932AD67EFCEE6A65.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdimg/B618917C2C9F46F1B7A34D855733C3C6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdimg/BB31BAF78EF54CAB8E59A63B50F8941B.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdimg/EC3F13F94B7A474F8B0701A9191D7A8B.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2014-08-16-miui6.markdown" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2014-09-04-is-pure-android-better.markdown" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2014-10-01-why-alibaba-ux-sucks.markdown" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2014-11-20-responsive-web-design.markdown" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2014-12-13-wechat-block-kuaidi.markdown" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2015-03-10-apple-event-2015.markdown" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2015-03-25-digital-native.markdown" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2015-03-31-e2e_user_scenarios.markdown" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2015-04-14-unix-linux-note.markdown" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2015-04-15-os-metro.markdown" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2015-05-11-see-u-ali.markdown" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2015-05-25-js-module-loader.markdown" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2015-06-15-alitrip-strategy.markdown" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2015-07-09-js-module-7day.markdown" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2015-09-22-js-version.markdown" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2015-10-28-how-designer-learn-fe.markdown" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2015-12-15-ios9-safari-web.markdown" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2015-12-28-css-sucks-2015.markdown" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2016-02-01-React-vs-Angular2.markdown" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2016-06-05-pwa-in-my-pov.markdown" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2016-09-22-the-open-web.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2016-10-20-pwa-qcon2016.markdown" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2016-11-20-sw-101-gdgdf.markdown" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2017-01-09-wechat-miniapp-ux.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2017-02-09-nextgen-web-pwa.markdown" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2017-04-06-html-document.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2017-05-28-sw-precache.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2017-06-25-you-are-slaves.markdown" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2017-07-12-upgrading-eleme-to-pwa.markdown" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2017-07-26-farewell-flash.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2017-10-06-css-complaints.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2017-12-12-halting-problem.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2017-12-12-uncomputable-funcs.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2018-06-30-dreamer.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2018-09-27-avoiding-success-at-all-cost.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/_posts/2018-10-06-vim-cn-im.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2018-10-06-vim-cn-im.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -79,8 +29,8 @@
         <entry file="file://$PROJECT_DIR$/_posts/2018-10-06-vim-cn-im.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="75">
-                <caret line="3" column="31" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
+              <first_editor relative-caret-position="393">
+                <caret line="233" lean-forward="true" selection-start-line="233" selection-end-line="233" />
               </first_editor>
               <second_editor>
                 <markdownNavigatorState />
@@ -93,8 +43,8 @@
         <entry file="file://$PROJECT_DIR$/_posts/2014-01-29-hello-2015.markdown">
           <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="100">
-                <caret line="4" column="10" selection-start-line="4" selection-end-line="4" selection-end-column="31" />
+              <first_editor relative-caret-position="300">
+                <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
               </first_editor>
               <second_editor>
                 <markdownNavigatorState />
@@ -140,8 +90,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="731" />
-    <option name="y" value="52" />
+    <option name="x" value="288" />
+    <option name="y" value="47" />
     <option name="width" value="1943" />
     <option name="height" value="1040" />
   </component>
@@ -210,15 +160,15 @@
       <option name="presentableId" value="Default" />
       <updated>1541754322012</updated>
       <workItem from="1541754323560" duration="3159000" />
-      <workItem from="1542785759324" duration="871000" />
+      <workItem from="1542785759324" duration="1218000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4030000" />
+    <option name="totallyTimeSpent" value="4377000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="296" y="36" width="1554" height="832" extended-state="0" />
+    <frame x="231" y="38" width="1554" height="832" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20750988" />
@@ -303,8 +253,8 @@
       </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="100">
-            <caret line="4" column="10" selection-start-line="4" selection-end-line="4" selection-end-column="31" />
+          <first_editor relative-caret-position="300">
+            <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
           </first_editor>
           <second_editor>
             <markdownNavigatorState />
@@ -320,8 +270,8 @@
       </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="75">
-            <caret line="3" column="31" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
+          <first_editor relative-caret-position="393">
+            <caret line="233" lean-forward="true" selection-start-line="233" selection-end-line="233" />
           </first_editor>
           <second_editor>
             <markdownNavigatorState />
