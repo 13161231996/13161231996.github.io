@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3c2aa981-cd71-4bc0-b6de-03d632338fd0" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/_posts/2018-10-06-vim-cn-im.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2018-10-06-vim-cn-im.md" afterDir="false" />
-    </list>
+    <list default="true" id="3c2aa981-cd71-4bc0-b6de-03d632338fd0" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -29,8 +27,8 @@
         <entry file="file://$PROJECT_DIR$/_posts/2018-10-06-vim-cn-im.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="393">
-                <caret line="233" lean-forward="true" selection-start-line="233" selection-end-line="233" />
+              <first_editor relative-caret-position="268">
+                <caret line="402" column="9" lean-forward="true" selection-start-line="402" selection-start-column="9" selection-end-line="402" selection-end-column="9" />
               </first_editor>
               <second_editor>
                 <markdownNavigatorState />
@@ -160,12 +158,12 @@
       <option name="presentableId" value="Default" />
       <updated>1541754322012</updated>
       <workItem from="1541754323560" duration="3159000" />
-      <workItem from="1542785759324" duration="1218000" />
+      <workItem from="1542785759324" duration="1493000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4377000" />
+    <option name="totallyTimeSpent" value="4652000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="231" y="38" width="1554" height="832" extended-state="0" />
@@ -270,8 +268,8 @@
       </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="393">
-            <caret line="233" lean-forward="true" selection-start-line="233" selection-end-line="233" />
+          <first_editor relative-caret-position="268">
+            <caret line="402" column="9" lean-forward="true" selection-start-line="402" selection-start-column="9" selection-end-line="402" selection-end-column="9" />
           </first_editor>
           <second_editor>
             <markdownNavigatorState />
