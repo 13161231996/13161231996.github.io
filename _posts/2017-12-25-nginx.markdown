@@ -10,7 +10,7 @@ tags:
     - Nginx
 ---
 修改在etc/nginx/sites-aviable/default
-![ ](./img/fanxiang.jpg)
+<img src="./img/fanxiang.jpg"/>
 添加proxy_pass http://ip地址：端口
 例如 ：prixy_pass http://192.168.31.9:80
 
