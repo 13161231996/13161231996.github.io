@@ -14,9 +14,9 @@ future: true
 # SNS settings
 RSS: false
 weibo_username:     13161231996
-zhihu_username:     huxpro
+zhihu_username:     www.zhihu.com
 github_username:    13161231996
-twitter_username:   huxpro
+twitter_username:   www.baidu.com
 #facebook_username:  huxpro
 #linkedin_username:  firstname-lastname-idxxxx
 
@@ -59,7 +59,7 @@ kramdown:
 
 
 # Disqus settings
-disqus_username: hux
+disqus_username: BaiDong
 
 # Netease settings
 netease_comment: false
