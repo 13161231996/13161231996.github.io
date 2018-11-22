@@ -17,9 +17,9 @@ tags:
 
 redis 集群配置
 在解压好的redis4.0文件夹中 会有makefile   输入make 编译源码
-![avatar](./img/1.jpg)
+<img src="../img/1.jpg"/>
 创建6个文件夹 ，配置不同的redis.conf, reids-cli,redis-server 由redis/src配置文件复制而来
-![avatar](./img/2.jpg)
+<img src="../img/2.jpg"/>
 ---
 
 
