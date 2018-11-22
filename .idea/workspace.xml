@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c2aa981-cd71-4bc0-b6de-03d632338fd0" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/img/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/2.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_posts/2018-2-1-redis.markdown" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2018-2-1-redis.markdown" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/redis.pdf" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -108,8 +105,8 @@
         <entry file="file://$PROJECT_DIR$/_posts/2018-2-1-redis.markdown">
           <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="475">
-                <caret line="19" column="20" lean-forward="true" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+              <first_editor relative-caret-position="375">
+                <caret line="15" column="10" lean-forward="true" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
               </first_editor>
               <second_editor>
                 <markdownNavigatorState />
@@ -239,12 +236,12 @@
       <updated>1541754322012</updated>
       <workItem from="1541754323560" duration="3159000" />
       <workItem from="1542785759324" duration="4035000" />
-      <workItem from="1542851084876" duration="3616000" />
+      <workItem from="1542851084876" duration="4210000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10810000" />
+    <option name="totallyTimeSpent" value="11404000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="474" y="83" width="1554" height="832" extended-state="0" />
@@ -496,8 +493,8 @@
     <entry file="file://$PROJECT_DIR$/_posts/2018-2-1-redis.markdown">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="475">
-            <caret line="19" column="20" lean-forward="true" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+          <first_editor relative-caret-position="375">
+            <caret line="15" column="10" lean-forward="true" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
           </first_editor>
           <second_editor>
             <markdownNavigatorState />

@@ -1,0 +1,23 @@
+---
+layout:     post
+title:      "快速搜索引擎服务"
+subtitle:   " \"快速搜索""
+date:       2018-3-15 12:00:00
+author:     "BaiDong"
+header-img: "img/home-bg-art.jpg"
+catalog: true
+tags:
+    - 快速搜索
+---
+lucene   阿帕奇                 卢森斯      不支持 中文
+
+sphinx   俄罗斯人发明的   斯文克斯   建立索引快  消耗小    不支持 中文
+
+coreseek    支持中文   不在更新支持，docker 可以支持 coreseek
+
+elasticsearch   nosql+快速搜索，更适合查询，支持平行扩容
+
+好处：加速搜索，全文本索引
+---
+
+
