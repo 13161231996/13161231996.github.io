@@ -16,8 +16,6 @@ sphinx   俄罗斯人发明的   斯文克斯   建立索引快  消耗小    �
 coreseek    支持中文   不在更新支持，docker 可以支持 coreseek
 
 elasticsearch   nosql+快速搜索，更适合查询，支持平行扩容
-
-好处：加速搜索，全文本索引
 ---
 
 
