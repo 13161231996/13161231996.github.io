@@ -1,0 +1,30 @@
+---
+layout:     post
+title:      "Hello 2017"
+subtitle:   " \"Nginx配置\""
+date:       2017-12-05 12:00:00
+author:     "BaiDong"
+header-img: "img/home-bg-art.jpg"
+catalog: true
+tags:
+    - Nginx
+---
+1. sudo apt-get install nginx
+
+2. cd /etc/sites-available/
+
+3. cp default  lala
+
+4. vim lala
+
+5. 修改 root /var/www/html     为 root /var/www/lala
+
+6.创建index.html 在 /var/www/lala/
+
+7. cd /etc/sites-enabled/
+
+8. ln -s ../sits-avliable/lala ./
+
+---
+
+

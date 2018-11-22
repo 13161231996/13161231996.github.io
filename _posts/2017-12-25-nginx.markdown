@@ -1,0 +1,19 @@
+---
+layout:     post
+title:      "Hello 2017"
+subtitle:   " \"Nginx反向代理\""
+date:       2017-12-25 12:00:00
+author:     "BaiDong"
+header-img: "img/home-bg-art.jpg"
+catalog: true
+tags:
+    - Nginx
+---
+修改在etc/nginx/sites-aviable/default
+![avatar](img/fanxiang.jpg)
+添加proxy_pass http://ip地址：端口
+例如 ：prixy_pass http://192.168.31.9:80
+
+---
+
+
