@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "快速搜索引擎服务"
-subtitle:   " \"快速搜索""
+subtitle:   " \"快速搜索\""
 date:       2018-3-15 12:00:00
 author:     "BaiDong"
 header-img: "img/home-bg-art.jpg"
@@ -9,6 +9,7 @@ catalog: true
 tags:
     - 快速搜索
 ---
+
 lucene   阿帕奇                 卢森斯      不支持 中文
 
 sphinx   俄罗斯人发明的   斯文克斯   建立索引快  消耗小    不支持 中文

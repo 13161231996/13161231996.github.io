@@ -12,7 +12,7 @@ tags:
 第一台主库 修改 etc/redis/redis.conf  禁用 bind 127.0.0.1
 
 修改第二台机器从库    etc/redis/redis.conf   开启 slaveof  修改为第一台主库的的ip 及其端口
-
+<img src="../img/3.jpg"/>
 从库只可以查不可以写
 
 redis 集群配置
