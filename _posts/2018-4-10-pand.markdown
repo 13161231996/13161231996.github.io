@@ -1,0 +1,112 @@
+---
+
+layout:     post
+title:      "Pandas 练习集"
+subtitle:   " \"Pandas\""
+date:       2018-4-10 12:00:00
+author:     "BaiDong"
+header-img: "img/home-bg-art.jpg"
+catalog: true
+tags:
+    - Pandas
+
+---
+
+import pandas as pd
+
+import numpy as np
+
+import matplotlib.pyplot as plt
+
+import datetime
+
+data = pd.read_table('1.txt', sep='\s+', parse_dates=[[0, 1, 2]])
+
+查看日期数据
+
+print(data)
+
+def fix_century(x):
+
+    year = x.year-100 if x.year >1989 else x.year
+
+    return datetime.date(year, x.month,x.day)
+
+data['Yr_M0_Dy'] = data['Yr_Mo_Dy'].apply(fix_century)
+
+print(data['Yr_M0_Dy'])
+
+data = data.set_index('Yr_Mo_Dy')
+
+# print(data.head(3))
+
+#对应每一个location，一共有多少数据值缺失
+
+print(data.isnull().sum())
+
+#对应每一个location，一共有多少完整的数据值
+
+print(data.shape[1] - data.isnull().sum())
+
+对于全体数据，计算风速的平均值
+
+print(data.mean().mean())
+
+#创建一个名为loc_stats的数据框去计算并存储每个location的风速最小值，最大值，平均值和标准差
+
+loc_stats = pd.DataFrame()
+
+loc_stats['min'] = data.min()
+
+loc_stats['max'] = data.max()
+
+loc_stats['mean']  = data.mean()
+
+loc_stats['std'] = data.std()
+
+print(loc_stats)
+
+#创建一个名为day_stats的数据框去计算并存储所有location的风速最小值，最大值，平均值和标准差
+
+day_stats = pd.DataFrame()
+
+day_stats['min'] = data.min(axis=1)
+
+day_stats['max'] = data.max(axis=1)
+
+day_stats['mean'] = data.mean(axis=1)
+
+day_stats['std'] = data.std(axis=1)
+
+print(day_stats.head())
+
+对于每一个location，计算一月份的平均风速
+
+data['date'] = data.index
+
+data['year'] = data['date'].apply(lambda date: date.year)
+
+data['month'] = data['date'].apply(lambda date: date.month)
+
+data['day'] = data['date'].apply(lambda date: date.day)
+#计算一月的平均数据
+
+january = data.query('month==1')
+
+print(january)
+
+print(january.loc[:,'RPT':'MAL'].mean())
+
+每年的频率取样
+
+print(data.query('month ==1 and day==1'))
+
+按月取样
+
+print(data.query('day == 1'))
+
+
+
+---
+
+
