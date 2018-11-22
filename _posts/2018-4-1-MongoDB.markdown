@@ -3,7 +3,7 @@
 layout:     post
 title:      "MongoDB集群部署"
 subtitle:   " \"快速搜索\""
-date:       2018-3-15 12:00:00
+date:       2018-4-01 12:00:00
 author:     "BaiDong"
 header-img: "img/home-bg-art.jpg"
 catalog: true
