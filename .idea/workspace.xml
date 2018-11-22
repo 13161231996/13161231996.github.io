@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c2aa981-cd71-4bc0-b6de-03d632338fd0" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/_posts/2017-12-15-nginx.markdown" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_posts/2017-12-25-nginx.markdown" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/fanxiang.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_posts/2018-1-10-nginx.markdown" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_posts/2018-2-1-redis.markdown" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_posts/redis.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2014-01-29-hello-2015.markdown" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2014-01-29-hello-2015.markdown" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2017-12-1.markdown" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2017-12-1-pgsql-lei.markdown" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2017-12-15-nginx.markdown" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2017-12-15-nginx.markdown" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2017-12-25-nginx.markdown" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2017-12-25-nginx.markdown" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -67,8 +67,8 @@
         <entry file="file://$PROJECT_DIR$/_posts/2017-12-15-nginx.markdown">
           <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="550">
-                <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+              <first_editor relative-caret-position="50">
+                <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
               </first_editor>
               <second_editor>
                 <markdownNavigatorState />
@@ -77,12 +77,40 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2017-12-25-nginx.markdown" pinned="false" current-in-tab="true">
+      <file leaf-file-name="2017-12-25-nginx.markdown" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_posts/2017-12-25-nginx.markdown">
           <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="375">
-                <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+              <first_editor relative-caret-position="325">
+                <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+              </first_editor>
+              <second_editor>
+                <markdownNavigatorState />
+              </second_editor>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2018-1-10-nginx.markdown" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_posts/2018-1-10-nginx.markdown">
+          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="418">
+                <caret line="62" column="3" lean-forward="true" selection-start-line="62" selection-start-column="3" selection-end-line="62" selection-end-column="3" />
+              </first_editor>
+              <second_editor>
+                <markdownNavigatorState />
+              </second_editor>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2018-2-1-redis.markdown" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/_posts/2018-2-1-redis.markdown">
+          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="425">
+                <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
               </first_editor>
               <second_editor>
                 <markdownNavigatorState />
@@ -114,6 +142,8 @@
         <option value="$PROJECT_DIR$/_posts/2014-01-29-hello-2015.markdown" />
         <option value="$PROJECT_DIR$/_posts/2017-12-15-nginx.markdown" />
         <option value="$PROJECT_DIR$/_posts/2017-12-25-nginx.markdown" />
+        <option value="$PROJECT_DIR$/_posts/2018-1-10-nginx.markdown" />
+        <option value="$PROJECT_DIR$/_posts/2018-2-1-redis.markdown" />
       </list>
     </option>
   </component>
@@ -133,8 +163,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="422" />
-    <option name="y" value="50" />
+    <option name="x" value="337" />
+    <option name="y" value="77" />
     <option name="width" value="1943" />
     <option name="height" value="1040" />
   </component>
@@ -158,11 +188,6 @@
             <path>
               <item name="blog" type="b2602c69:ProjectViewProjectNode" />
               <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="img" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
               <item name="portfolio" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -181,8 +206,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\尹百东\Desktop\workspace\blog\img" />
       <recent name="C:\Users\尹百东\Desktop\workspace\blog\_posts" />
+      <recent name="C:\Users\尹百东\Desktop\workspace\blog\img" />
       <recent name="C:\Users\尹百东\Desktop\workspace\blog\pdimg" />
     </key>
   </component>
@@ -210,15 +235,15 @@
       <updated>1541754322012</updated>
       <workItem from="1541754323560" duration="3159000" />
       <workItem from="1542785759324" duration="4035000" />
-      <workItem from="1542851084876" duration="1824000" />
+      <workItem from="1542851084876" duration="2769000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9018000" />
+    <option name="totallyTimeSpent" value="9963000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="338" y="40" width="1554" height="832" extended-state="0" />
+    <frame x="402" y="64" width="1554" height="832" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20750988" />
@@ -428,8 +453,8 @@
     <entry file="file://$PROJECT_DIR$/_posts/2017-12-15-nginx.markdown">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="550">
-            <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+          <first_editor relative-caret-position="50">
+            <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
           </first_editor>
           <second_editor>
             <markdownNavigatorState />
@@ -437,11 +462,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/img/fanxiang.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/_posts/2017-12-25-nginx.markdown">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="375">
-            <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+          <first_editor relative-caret-position="325">
+            <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+          </first_editor>
+          <second_editor>
+            <markdownNavigatorState />
+          </second_editor>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2018-1-10-nginx.markdown">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="418">
+            <caret line="62" column="3" lean-forward="true" selection-start-line="62" selection-start-column="3" selection-end-line="62" selection-end-column="3" />
+          </first_editor>
+          <second_editor>
+            <markdownNavigatorState />
+          </second_editor>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2018-2-1-redis.markdown">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="425">
+            <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
           </first_editor>
           <second_editor>
             <markdownNavigatorState />

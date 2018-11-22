@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Hello 2017"
+title:      "Nginx 配置"
 subtitle:   " \"Nginx配置\""
 date:       2017-12-05 12:00:00
 author:     "BaiDong"

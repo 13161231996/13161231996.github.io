@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Hello 2017"
+title:      "Nginx 反向代理"
 subtitle:   " \"Nginx反向代理\""
 date:       2017-12-25 12:00:00
 author:     "BaiDong"
@@ -10,7 +10,7 @@ tags:
     - Nginx
 ---
 修改在etc/nginx/sites-aviable/default
-![avatar](img/fanxiang.jpg)
+![ ](./img/fanxiang.jpg)
 添加proxy_pass http://ip地址：端口
 例如 ：prixy_pass http://192.168.31.9:80
 

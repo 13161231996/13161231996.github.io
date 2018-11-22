@@ -1,0 +1,65 @@
+---
+layout:     post
+title:      "Nginx 负载均衡及其问题得解决方案"
+subtitle:   " \"Nginx负载均衡\""
+date:       2018-1-10 12:00:00
+author:     "BaiDong"
+header-img: "img/home-bg-art.jpg"
+catalog: true
+tags:
+    - Nginx
+---
+#会话维持！
+
+（1）通过通用工具配置或配置（运维手法）
+
+通用工具：通过开启ip_hash  使用户ip访问同一服务器
+
+好处：无需修改代码，操作容易
+
+坏处：1.ip_hash 占用资源！
+
+    2.如果某个IP访问过多，或者过少  导致服务器负载不均匀
+
+   (2) 通过软件架构
+
+       1.将session 存入数据库后者redis
+
+2. 干掉session  ,打造自己的会话系统 例如token
+
+##静态资源丢失
+
+（1）通过通用工具配置或配置（运维手法）
+
+1.在多台负载服务器上搭建NFS
+
+   (2) 通过软件架构
+
+动静分离， 静态资源放在自己的服务器
+
+配置方法：
+
+在 etc/nginx/sites-available/defualt添加
+
+    upstream webs {
+        #ip_hash
+        server 192.168.31.8;
+
+        server 192.168.31.81;
+
+        server 192.168.31.82;
+
+    }
+
+    在 location / {
+
+        proxy_pass      http://webs;
+    }
+
+遇到的问题 ：
+
+因负载均衡造成用户会话丢失，和静态资源的失败
+
+---
+
+
