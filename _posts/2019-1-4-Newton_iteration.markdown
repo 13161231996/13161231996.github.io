@@ -38,21 +38,21 @@ tags:
 	 
 算法实现
 
-class Solution:
+	class Solution:
 
-    def mySqrt(self, x):
+		def mySqrt(self, x):
 
-        if x<=1:
-		
-            return x
+			if x<=1:
 			
-        r = x
-		
-        while r>x / r:
-		
-            r = (r+x/r) / 2
+				return x
+				
+			r = x
 			
-        return int(r)
+			while r>x / r:
+			
+				r = (r+x/r) / 2
+				
+			return int(r)
 		
 总结：使用牛顿迭代法实现非负整数开方。
 
