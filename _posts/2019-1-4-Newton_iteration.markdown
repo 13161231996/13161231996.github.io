@@ -53,7 +53,6 @@ class Solution:
             r = (r+x/r) / 2
 			
         return int(r)
-
 		
 总结：使用牛顿迭代法实现非负整数开方。
 ---
