@@ -1,0 +1,62 @@
+---
+
+layout:     post
+title:      "Data structure "
+subtitle:   " \"数据结构-栈\""
+date:       2018-06-30 16:59:00
+author:     "BaiDong"
+header-img: "img/home-bg-art.jpg"
+catalog: true
+tags:
+    - 算法学习
+
+---
+
+栈
+	是一种容器，也称为堆栈，后进先出，Python中关注操作就可以。不需要关心具体内存。
+实现方式
+
+	顺序表       从后添加   时间复杂度为O(1) ,反过来为O(n)
+	链表         从前添加   时间复杂度为O(1) ,反过来为O(n)
+
+使用顺序表代码实现栈
+	class Stack(object):
+	创建栈容器
+    def __init__(self):
+        self.__list = []
+	压栈
+    def push(self,item):
+        self.__list.append(item)
+	出栈
+    def pop(self):
+        return self.__list.pop()
+
+    返回栈顶元素
+    def peek(self):
+        if self.__list:
+            return self.__list[-1]
+        else:
+            return None
+    判断是否为空
+    def is_empty(self):
+        return not self.__list
+
+    def size(self):
+        return len(self.__list)
+
+	if __name__ == "__main__":
+		s = Stack()
+		s.push(1)
+		s.push(2)
+		s.push(3)
+		s.push(4)
+		s.push(5)
+		print(s.pop())
+		print(s.pop())
+		print(s.pop())
+		print(s.pop())
+		print(s.pop())
+
+---
+
+

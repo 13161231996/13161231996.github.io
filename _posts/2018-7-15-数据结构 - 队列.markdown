@@ -1,0 +1,79 @@
+---
+
+layout:     post
+title:      "Data structure "
+subtitle:   " \"数据结构-队列\""
+date:       2018-07-15 18:59:00
+author:     "BaiDong"
+header-img: "img/home-bg-art.jpg"
+catalog: true
+tags:
+    - 算法学习
+
+---
+
+队列
+	
+	一端添加，一端取值， 先进先出，类似于购买商品排队
+
+代码实现：
+
+	class Queue(object):
+		定义队列
+		def __init__(self):
+			self.__list = []
+		入队
+		def enqueue(self,item):
+			self.__list.append(item)
+		出队
+		def dequeue(self):
+			return self.__list.pop(0)
+		是否为空
+		def is_empty(self):
+			return not self.__list
+		大小
+		def size(self):
+			return len(self.__list)
+
+	if __name__ == '__main__':
+		s=Queue()
+		s.enqueue(1)
+		s.enqueue(2)
+		s.enqueue(3)
+		s.enqueue(4)
+		s.enqueue(5)
+		print(s.dequeue())
+		print(s.dequeue())
+		print(s.dequeue())
+		print(s.dequeue())
+		print(s.dequeue())
+
+双端队列实现：
+
+	class Deque(object):
+		定义队列
+
+		def __init__(self):
+			self.__list = []
+		头添加
+		def add_front(self, item):
+			self.__list.insert(0,item)
+		尾添加
+		def add_rear(self, item):
+			self.__list.append(item)
+		头删除
+		def pop_front(self):
+			return self.__list.pop(0)
+		尾删除
+		def pop_rear(self):
+			return self.__list.pop()
+
+		def is_empty(self):
+			return not self.__list
+
+		def size(self):
+			return len(self.__list)	
+	
+---
+
+

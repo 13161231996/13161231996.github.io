@@ -1,0 +1,75 @@
+---
+
+layout:     post
+title:      "Data structure "
+subtitle:   " \"数据结构-队列\""
+date:       2018-07-30 19:59:00
+author:     "BaiDong"
+header-img: "img/home-bg-art.jpg"
+catalog: true
+tags:
+    - 算法学习
+
+---
+
+单链表
+	python 之所以可以实现  a,b=b,a  的数值交换，因为Python采用了引用机制，
+	比如说C语言中 a=10  a是10的内存地址的别名，而python中需要额外分配一块
+	内存地址，来存储10的内存地址，Python中a=10,是 10的内存地址被a引用了，
+	并不是 a就是10 的内存地址。由此来实现单链表。
+	
+代码实现：
+		class Node(object):
+			节点
+			def __init__(self,elem):
+				self.elem = elem
+				self.netx = None
+		
+		
+		class SingleLinkList(object):
+			def __init__(self,node=None):
+				self.__head = node
+				
+			判断是否为空
+			def is_empty(self):
+				return self.__head
+				
+			链表长度
+			def lenght(self):
+				cur = self.__head
+				count = 0
+				while cur != None:
+					count+=1
+					cur = cur.next
+				return count
+				
+			遍历列表
+			def travel(self):
+				pass
+				
+			头添加
+			def headd(self,item):
+				pass
+				
+			尾添加
+			def append(self,item):
+				pass
+				
+			指定位置添加
+			def insert(self,item):
+				pass
+				
+			删除节点
+			def remove(self,item):
+				pass
+				
+			查找节点是否存在
+			def search(self,item):
+				pass
+			
+			
+			
+	
+---
+
+
