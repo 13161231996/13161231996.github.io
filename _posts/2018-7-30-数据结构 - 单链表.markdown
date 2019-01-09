@@ -2,7 +2,7 @@
 
 layout:     post
 title:      "Data structure "
-subtitle:   " \"数据结构-队列\""
+subtitle:   " \"数据结构-单链表\""
 date:       2018-07-30 19:59:00
 author:     "BaiDong"
 header-img: "img/home-bg-art.jpg"
@@ -13,19 +13,19 @@ tags:
 ---
 
 单链表
-	python 之所以可以实现  a,b=b,a  的数值交换，因为Python采用了引用机制，
-	比如说C语言中 a=10  a是10的内存地址的别名，而python中需要额外分配一块
-	内存地址，来存储10的内存地址，Python中a=10,是 10的内存地址被a引用了，
-	并不是 a就是10 的内存地址。由此来实现单链表。
+		python 之所以可以实现  a,b=b,a  的数值交换，因为Python采用了引用机制，
+		比如说C语言中 a=10  a是10的内存地址的别名，而python中需要额外分配一块
+		内存地址，来存储10的内存地址，Python中a=10,是 10的内存地址被a引用了，
+		并不是 a就是10 的内存地址。由此来实现单链表。
 	
 代码实现：
+
 		class Node(object):
 			节点
 			def __init__(self,elem):
 				self.elem = elem
 				self.netx = None
-		
-		
+				
 		class SingleLinkList(object):
 			def __init__(self,node=None):
 				self.__head = node
