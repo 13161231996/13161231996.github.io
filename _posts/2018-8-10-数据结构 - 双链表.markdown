@@ -1,0 +1,144 @@
+---
+
+layout:     post
+title:      "Data structure "
+subtitle:   " \"数据结构-双链表\""
+date:       2018-08-10 18:59:00
+author:     "BaiDong"
+header-img: "img/home-bg-art.jpg"
+catalog: true
+tags:
+    - 算法学习
+
+---
+
+双链表
+
+		单链表拥有值域和后继节点域，后继节点域记录下一个节点的位置，
+		
+		双链表拥有前继节点和值域和后继节点域，前继节点记录上一个节点的位置
+	
+代码实现：
+
+		class Node(object):
+			双向节点
+			def __init__(self,item):
+				self.elem = item
+				self.next = None
+				self.prev = None
+
+		class DoubuleLinkList(object):
+			def __init__(self, node=None):
+				self._head = node
+
+			def is_empty(self):
+				return self._head is None
+
+			def length(self):
+				cur = self._head
+				count = 0
+				while cur != None:
+					count += 1
+					cur = cur.next
+				return count
+
+			遍历列表
+
+			def travel(self):
+				cur = self._head
+				while cur != None:
+					print(cur.elem, end=" ")
+					cur = cur.next
+
+			头添加
+
+			def add(self, item):
+				node = Node(item)
+				将头结点保存的第一个节点信息赋值给新添加节点的NEXT区域
+				node.next = self._head
+				将新节点信息赋值给头节点
+				self._head = node
+				将新节点信息赋值给第一个节点的perv区域
+				node.next.prev = node
+
+			尾添加元素 尾插法
+
+			def append(self, item):
+				node = Node(item)
+				if self.is_empty():
+					self._head = node
+				else:
+					cur = self._head
+					while cur.next != None:
+						cur = cur.next
+					cur.next = node
+					node.prev = cur
+
+			指定位置添加
+			def insert(self,pos,item):
+				只想位置
+				if pos <= 0:
+					self.add(item)
+				elif pos >(self.length()-1):
+					self.append(item)
+				else:
+					count=0
+					cur = self._head
+					while count <pos:
+						count+=1
+						cur = cur.next
+					node = Node(item)
+					node.next = cur
+					node.prev = cur.prev
+					cur.prev.next = node
+					cur.prev = node
+
+
+			删除节点
+			def remove(self,item):
+				cur = self._head
+				while cur!=None:
+					if cur.elem ==item:
+						if cur == self._head:
+							self._head=cur.next
+							if cur.next:
+								cur.next.prev = cur.prev
+						else:
+							cur.prev.next = cur.next
+							if cur.next:
+								cur.next.prev = cur.prev
+						break
+					else:
+						cur = cur.next
+
+			查找节点是否存在
+
+			def search(self, item):
+				cur = self._head
+				while cur != None:
+					if cur.elem == item:
+						return True
+					else:
+						cur = cur.next
+				return False
+		if __name__ == "__main__":
+			ll = DoubuleLinkList()
+			print(ll.is_empty())
+			print(ll.length())
+			ll.append(1)
+			print(ll.is_empty())
+			print(ll.length())
+			ll.append(2)
+			ll.add(8)
+			ll.append(3)
+			ll.append(4)
+			ll.insert(2,100)
+			ll.append(5)
+			ll.travel()
+			ll.remove(8)
+			ll.travel()
+			
+	
+---
+
+
