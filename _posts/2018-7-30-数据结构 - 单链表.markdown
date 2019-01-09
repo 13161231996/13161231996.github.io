@@ -24,7 +24,7 @@ tags:
 			节点
 			def __init__(self,elem):
 				self.elem = elem
-				self.netx = None
+				self.next = None
 				
 		class SingleLinkList(object):
 			def __init__(self,node=None):
@@ -45,27 +45,70 @@ tags:
 				
 			遍历列表
 			def travel(self):
-				pass
+				cur = self.__head
+				while cur!=None:
+					print(cur.item,end=" ")
+					cur.next
 				
 			头添加
 			def headd(self,item):
-				pass
+				node = Node(item)
+				node.next = self.__head
+				self.__head =node 
+				
 				
 			尾添加
 			def append(self,item):
-				pass
+				node = Node(item)
+				if self.is_empty():
+					self.__head = node
+				else:
+					cur = self.__head
+					while cur.next != None:
+						cur = cur.next
+					cur.next = node
 				
 			指定位置添加
-			def insert(self,item):
-				pass
+			def insert(self,pos,item):
+				if pos <0:
+					self.headd(item)
+				elif pos >(self.lenght()-1):
+					self.append(item)
+				else:
+					pre = self.__head
+					count = 0
+					while count<(pos-1):
+						count +=1
+						pre = pre.next
+					node = Node(item)
+					node.next = pre.next
+					pre.next = node
 				
 			删除节点
 			def remove(self,item):
-				pass
+				cur = self.__head
+				pre = None
+				while cur!=None:
+					if cur.elem == item:
+						if cur == self.__head:
+							self.__head = cur.next
+						else:
+							pre.next = cur.next
+						break
+					else:
+						pre = cur 
+						cur = cur.next
+						
 				
 			查找节点是否存在
 			def search(self,item):
-				pass
+				cur = self.__head
+				while cur!=None: 
+				   if cur.elem==item:
+						return True
+					else:
+						cur= cur.next
+				return False
 			
 			
 			
