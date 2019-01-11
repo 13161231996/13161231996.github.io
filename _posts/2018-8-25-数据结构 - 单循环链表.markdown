@@ -1,0 +1,159 @@
+---
+
+layout:     post
+title:      "Data structure "
+subtitle:   " \"数据结构-单项循环链表\""
+date:       2018-08-25 18:00:00
+author:     "BaiDong"
+header-img: "img/home-bg-art.jpg"
+catalog: true
+tags:
+    - 算法学习
+
+---
+
+单向循环链表
+
+		单向循环链表拥有值域和后继节点域，后继节点域记录下一个节点的位置，
+		
+		最后一个节点的next域指向第一个节点。
+		
+	
+代码实现：
+
+		class Node(object):
+		节点
+		def __init__(self,elem):
+			self.elem = elem
+			self.next = None
+
+		class SingleLinkList(object):
+			单链表
+			def __init__(self,node=None):
+				self._head=node
+				if node:
+					node.next = node
+			def is_empty(self):
+				return self._head ==None
+			def length(self):
+				if self.is_empty():
+					return 0
+				cur  = self._head
+				count =  1
+				while cur.next !=self._head:
+					count+=1
+					cur = cur.next
+				return count
+			遍历列表
+			def travel(self):
+				if self.is_empty():
+					return None
+				cur = self._head
+				while cur.next !=self._head:
+					print(cur.elem,end=" ")
+					cur = cur.next
+				print(cur.elem)
+
+			头添加
+			def add(self,item):
+				node = Node(item)
+				if self.is_empty():
+					self._head = node
+					node.next = node
+				else:
+					cur = self._head
+					while cur.next !=self._head:
+						cur=cur.next
+					node.next = self._head
+					self._head = node
+					cur.next = self._head
+			尾添加元素 尾插法
+			def append(self,item):
+				node = Node(item)
+				if self.is_empty():
+					self._head=node
+					node.next = node
+				else:
+					cur = self._head
+					while cur.next !=self._head:
+						cur = cur.next
+					cur.next =node
+					node.next = self._head
+			指定位置添加
+			def insert(self,pos,item):
+				'''只想位置'''
+				if pos <= 0:
+					self.add(item)
+				elif pos >(self.length()-1):
+					self.append(item)
+				else:
+					pre=self._head
+					count=0
+					while count <(pos-1):
+						count+=1
+						pre = pre.next
+					node = Node(item)
+					node.next = pre.next
+					pre.next = node
+
+			删除节点
+			def remove(self,item):
+				if self.is_empty():
+					return
+				cur = self._head
+				pre = None
+				while cur.next!=self._head:
+					if cur.elem ==item:
+						if cur == self._head:
+							rear = self._head
+							while rear.next!=self._head:
+								rear = rear.next
+							self._head =cur.next
+							rear.next = self._head
+						else:
+							pre.next = cur.next
+						return 
+					else:
+						pre = cur
+						cur = cur.next
+				if cur.elem ==item:
+					if cur ==self._head:
+						self._head = None
+					else:
+						pre.next = cur.next
+
+
+			查找节点是否存在
+			def search(self,item):
+				if self.is_empty():
+					return False
+				cur = self._head
+				while cur.next !=self._head:
+					if cur.elem == item:
+						return True
+					else:
+						cur = cur.next
+				if cur.elem ==item:
+					return True
+				return False
+	
+		if __name__ == "__main__":
+			ll = SingleLinkList()
+			print(ll.is_empty())
+			print(ll.length())
+			ll.append(1)
+			print(ll.is_empty())
+			print(ll.length())
+			ll.append(2)
+			ll.add(8)
+			ll.append(3)
+			ll.append(4)
+			ll.insert(2,100)
+			ll.append(5)
+			ll.travel()
+			ll.remove(8)
+			ll.travel()	
+	
+---
+
+
