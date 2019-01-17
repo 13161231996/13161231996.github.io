@@ -1,0 +1,186 @@
+---
+
+layout:     post
+title:      "Data structure "
+subtitle:   " \"基本排序算法\""
+date:       2018-09-10 18:00:00
+author:     "BaiDong"
+header-img: "img/home-bg-art.jpg"
+catalog: true
+tags:
+    - 算法学习
+
+---
+
+冒泡排序
+
+	最优时间复杂度： O(n)
+	
+    最坏时间复杂度： O(n^2)
+	
+	稳定性：稳定的排序
+	
+	对于一个n个数的列表，从第一个数开始，一直到第n-1个数，每个数和它挨着的下一个数比较，如果他下一个数更小，
+		
+	他们就交换数值，否则不交换。以上叫做一趟排序。经历一趟排序之后，可以保证最后一个数一定是整个数列中最大的。
+		
+    之后 从第一个数开始 到第n-2个数，每个数和下一个数比较(因为第n个数经历第一趟之后一定是最大的，所以不用再用第n-1个数跟第n个数比)，
+	
+	如果下一个数大，他们就交换数值，否则不交换。经过第二趟比较，数列的倒数两个数一定满足最终的条件，是倒数第二大的和最大的。
+	
+    这样一直一趟一趟的比，n个数的列表，经过n-1趟排序之后一定能保证正确的顺序。
+    
+    一个数列有n个数，
+    第一趟排序需要比较前n-1个数每个数和后面一个数，使最大的数到最后一个位置，发生n-1次比较
+	
+    第二趟排序需要比较前n-2个数，每个数后面的一个数，使第二大的数到倒数第二个位置，发生n-2次比较
+	
+    。。。
+    第i趟排序需要比较前n-i个数，每个数和后面的一个数，使第i大的数到倒数第i的位置上，发生n-i次比较
+	
+    最后一次就是第一个数和第二个数比较。
+    
+    经历n-1次比较，数列一定会变成正确的顺序。
+	
+	
+代码实现
+
+		for i in range(len(a)-1):
+			for j in range(len(a)-i-1):
+				print(a[i],a[j])
+				if a[j]>a[j+1]:
+					a[j],a[j+1] = a[j+1],a[j]
+				print(a)
+	
+
+
+选择排序
+
+    最优时间复杂度:O(n^2)
+	
+    最坏时间复杂度:O(n^2)
+	
+    稳定性：不稳定的排序
+	
+	找到最小的值交换位置，在剩下的值中再次寻找最小的值交换位置，
+	
+	将数组分为两部分，前部分为空，后一部分为全部值，在后一部分选取最小的值，
+	
+	放到前面去
+	
+代码实现
+	
+	
+		def select_sort(alist):
+			for j in range(len(alist)-1):
+				min = j
+				for i in range(j+1,len(alist)):
+					if alist[min] > alist[i]:
+						min = i
+				alist[j],alist[min] = alist[min],alist[j]
+			return alist
+			
+插入排序
+
+	最坏时间复杂度: O(n^2)
+	
+    最优时间复杂度: O(n)
+	
+    稳定性：稳定的排序
+	
+	对于一个n个数的数列：
+	
+    拿出第二个数，跟第一个比较，如果第二个大，第二个就放在第一个后面，否则放在第一个前面，这样前两个数就是正确顺序了
+	
+    拿出第三个数，跟第二个数比较，如果比第二个数小，就放在第二个数前面，再跟第一个数比，比第一个小就放在第一个前面，这样前三个数就是正确顺序
+	
+    ....
+	
+    拿出最后一个数，跟之前的正确顺序进行比较，插入到合适的位置当中。
+    
+    可以理解成： 每次拿到一个数，他前面都是一个有序的数列，然后，找到我何时的位置，我插入进去
+	
+代码实现
+
+		def charu_sort(alist):
+			for j in range(1,len(alist)):
+				i=j
+				while i >0:
+					if alist[i] < alist[i-1]:
+						alist[i],alist[i-1] = alist[i-1],alist[i]
+						i-=1
+					else:
+						break
+			return alist
+	
+快速排序
+	最坏情况的时间复杂度为O(n2)
+	
+	最好情况时间复杂度为O(nlog2n)
+	
+	通过一躺排序将要排序的数据分割成独立的两部分，其中一部分的所有数据都比另外一部分的所有数据都要小，
+	
+	然后再按次方法对这两部分数据分别进行快速排序，整个排序过程可以递归进行，以此达到整个数据变成有序序列。
+	
+代码实现
+		def kuai_sort(alist,first,last):
+			if first >=last:
+				return
+			mid_value = alist[first]
+			low = first
+			high = last
+			while low <high:
+				while low <high and alist[high] >=mid_value:
+						high -=1
+				alist[low] = alist[high]
+				while low < high and alist[low] < mid_value:
+					low+=1
+				alist[high] = alist[low]
+			alist[low] = mid_value
+			kuai_sort(alist,first,low-1) 4
+			kuai_sort(alist,low+1,last)
+			return alist
+
+归并排序
+	
+	最坏情况的时间复杂度为O(nlogn)
+	
+	最好情况时间复杂度为O(nlogn)
+	
+	假设初始序列含有n个记录，则可以看成是n个有序的子序列，
+	
+	每个子序列的长度为1，然后两两归并，得到n/2个长度为2或1的有序子序列，
+	
+	再两两归并，最终得到一个长度为n的有序序列为止，这称为2路归并排序。
+	
+代码实现
+
+		def gb_sort(alist):
+			n = len(alist)
+			if n<=1:
+				return alist
+			mid = n//2
+			left  采用归并排序后形成的有序的新的列表
+			left_li = gb_sort(alist[:mid])
+			# right  采用归并排序后形成的有序的新的列表
+			right_li = gb_sort(alist[mid:])
+			将两个有序的子序列合并成一个整体
+			left_pointer,right_pointer = 0,0
+			result = []
+			while left_pointer<len(left_li) and right_pointer<len(right_li) :
+				if left_li[left_pointer]< right_li[right_pointer]:
+					result.append(left_li[left_pointer])
+					left_pointer +=1
+				else:
+					result.append(right_li[right_pointer])
+					right_pointer +=1
+			将剩下的值加入列表中
+			result +=left_li[left_pointer:]
+			result += right_li[right_pointer:]
+			return result
+	
+	
+	
+---
+
+
