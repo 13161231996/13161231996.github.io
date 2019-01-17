@@ -114,6 +114,7 @@ tags:
 			return alist
 	
 快速排序
+
 	最坏情况的时间复杂度为O(n2)
 	
 	最好情况时间复杂度为O(nlog2n)
@@ -123,6 +124,7 @@ tags:
 	然后再按次方法对这两部分数据分别进行快速排序，整个排序过程可以递归进行，以此达到整个数据变成有序序列。
 	
 代码实现
+
 		def kuai_sort(alist,first,last):
 			if first >=last:
 				return
