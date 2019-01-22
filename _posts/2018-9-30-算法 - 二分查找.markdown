@@ -1,0 +1,55 @@
+---
+
+layout:     post
+title:      "Data structure "
+subtitle:   " \"二分查找\""
+date:       2018-09-30 18:00:00
+author:     "BaiDong"
+header-img: "img/home-bg-art.jpg"
+catalog: true
+tags:
+    - 算法学习
+
+---
+二分查找
+
+		最优时间复杂度 O(1) ，最坏时间复杂度 O(log2n)
+		
+		二分查找也称折半查找（Binary Search），它是一种效率较高的查找方法。
+
+		但是，折半查找要求线性表必须采用顺序存储结构，而且表中元素按关键字
+
+		有序排列。
+	
+代码实现
+
+		递归二分查找
+		def erfen_search(alist,item):
+			n = len(alist)
+			if n>0:
+				mid = n//2
+				if alist[mid] == item:
+					return True
+				elif item < alist[mid]:
+					 return erfen_search(alist[:mid],item)
+				else:
+					return erfen_search(alist[mid+1:],item)
+			return False
+		非递归二分查找
+		def erfen_search2(alist,item):
+			n = len(alist)
+			first = 0
+			last = n-1
+			while first <= last:
+				mid = (first + last) // 2
+				if alist[mid] ==item:
+					return True
+				elif item <alist[mid]:
+					last = mid -1
+				else:
+					first = mid +1
+			return False
+	
+---
+
+
