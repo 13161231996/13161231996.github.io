@@ -1,7 +1,7 @@
 ---
 
 layout:     post
-title:      "Newton iteration"
+title:      "算法骚操作"
 subtitle:   " \"相交链表\""
 date:       2019-01-19 18:39:00
 author:     "BaiDong"
