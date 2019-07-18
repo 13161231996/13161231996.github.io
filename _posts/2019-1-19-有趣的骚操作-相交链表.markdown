@@ -1,0 +1,71 @@
+---
+
+layout:     post
+title:      "Newton iteration"
+subtitle:   " \"相交链表\""
+date:       2019-01-19 18:39:00
+author:     "BaiDong"
+header-img: "img/home-bg-art.jpg"
+catalog: true
+tags:
+    - 算法骚操作
+
+---
+编写一个程序,找到连个单链表相交的起始节点
+![GitHub Log](/img/2.png)
+在节点c1开始相交
+![GitHub Log](/img/160.png)
+
+        输入：intersectVal = 2, listA = [0,9,1,2,4], listB = [3,2,4], skipA = 3, skipB = 1
+        输出：Reference of the node with value = 2
+        输入解释：相交节点的值为 2 （注意，如果两个列表
+        相交则不能为 0）。从各自的表头开始算起，链表 A 
+        为 [0,9,1,2,4]，链表 B 为 [3,2,4]。在 A 中，
+        相交节点前有 3 个节点；在 B 中，相交节点前有 1 个节点。
+
+
+题解 双指针法
+
+        1.指针 pA 指向 A 链表，指针 pB 指向 B 链表，依次往后遍历
+        2.如果 pA 到了末尾，则 pA = headB 继续遍历
+        3.如果 pB 到了末尾，则 pB = headA 继续遍历
+        4.比较长的链表指针指向较短链表head时，长度差就消除了
+        5.如此，只需要将最短链表遍历两次即可找到位置
+
+代码
+
+python3
+
+        class Solution(object):
+            def getIntersectionNode(self, headA, headB):
+                """
+                :type head1, head1: ListNode
+                :rtype: ListNode
+                """
+                p= headA
+                q = headB
+                while p!=q:
+                    p = p.next if p else headB
+                    q = q.next if q else headA
+                return p
+
+Go 
+
+
+        func getIntersectionNode(headA, headB *ListNode) *ListNode {
+            curA,curB := headA,headB
+            for curA !=curB{
+                if curA ==nil{
+                    curA=headB
+                }else{
+                    curA = curA.Next
+                }
+                if curB == nil{
+                    curB= headA
+                }else{
+                    curB = curB.Next
+                }
+                
+            }
+            return curA
+        }
