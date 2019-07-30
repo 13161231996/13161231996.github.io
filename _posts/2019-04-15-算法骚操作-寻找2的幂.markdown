@@ -1,0 +1,53 @@
+---
+
+layout:     post
+title:      "算法骚操作"
+subtitle:   " \"二进制筛选2的幂\""
+date:       2019-04-01 18:39:00
+author:     "BaiDong"
+header-img: "img/home-bg-art.jpg"
+catalog: true
+tags:
+    - 算法骚操作
+
+---
+
+给定一个整数,编写一个函数来判断它是否是2的幂次方
+
+示例1:
+
+    输入: 1
+    输出: true
+    解释: 2的0次方 = 1
+
+示例2:
+
+    输入: 16
+    输出: true
+    解释: 2的4次方 = 16
+
+示例3:
+
+    输入: 218
+    输出: false
+
+题解:
+
+    考虑2的幂次方正好的二进制的相应位且只有相应位为1，
+    其作位为0 如 4，8，16 100 1000 10000。。。。。
+    而4-1，8-1 ，16-1刚好互补，与操作为0，
+
+代码:
+python3:
+
+    class Solution:
+        def isPowerOfTwo(self, n: int) -> bool:
+            return n>0 and not n&(n-1)
+
+Go:
+
+    func isPowerOfTwo(n int) bool {
+        return n>0 && n&(n-1)==0
+    }
+
+
