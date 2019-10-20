@@ -1,0 +1,70 @@
+---
+
+layout:     post
+title:      "算法骚操作"
+subtitle:   " \"括号是否有效\""
+date:       2019-09-01 18:39:00
+author:     "BaiDong"
+header-img: "img/home-bg-art.jpg"
+catalog: true
+tags:
+    - 算法骚操作
+
+---
+
+给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串，判断字符串是否有效。
+有效字符串需满足：
+    左括号必须用相同类型的右括号闭合。
+    左括号必须以正确的顺序闭合。
+注意空字符串可被认为是有效字符串。
+
+示例1:
+
+    输入: 
+    "()"
+    输出: 
+    true
+    
+示例2:
+
+    输入:
+    "{(})"
+    输出:
+    false
+
+示例3:
+
+    输入:
+    "({[]})"
+    输出:
+    true
+
+题解:
+
+    使用栈
+
+    
+
+代码:
+
+Python:
+
+    class Solution:
+        def isValid(self, s: str) -> bool:
+            stack=[]
+            mapping = {")":"(","}":"{","]":"["}
+            for char in strs:
+                if char in mapping:
+                    top_element = stack.pop() if stack else "#"
+                    if mapping[char]!=top_element:
+                        return False
+                else:
+                    stack.append(char)
+            return not stack
+
+复杂度:
+
+    时间复杂度：O(n)O(n)，因为我们一次只遍历给定的字符串中的一个字符并在栈上进行 O(1)O(1) 的推入和弹出操作。
+    空间复杂度：O(n)O(n)，当我们将所有的开括号都推到栈上时以及在最糟糕的情况下，我们最终要把所有括号推到栈上。例如 ((((((((((。
+
+
