@@ -1,8 +1,8 @@
 ---
 
 layout:     post
-title:      "算法骚操作"
-subtitle:   " \"汉明重量\""
+title:      "汉明重量"
+subtitle:   " \"算法骚操作\""
 date:       2019-03-01 18:39:00
 author:     "BaiDong"
 header-img: "img/home-bg-art.jpg"
