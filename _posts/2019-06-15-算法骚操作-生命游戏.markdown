@@ -1,8 +1,8 @@
 ---
 
 layout:     post
-title:      "算法骚操作"
-subtitle:   " \"生命游戏\""
+title:      "生命游戏"
+subtitle:   " \"算法骚操作\""
 date:       2019-06-15 18:39:00
 author:     "BaiDong"
 header-img: "img/home-bg-art.jpg"
