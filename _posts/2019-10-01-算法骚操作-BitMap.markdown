@@ -1,7 +1,7 @@
 ---
 
 layout:     post
-title:      "KMP算法"
+title:      "BitMap算法"
 subtitle:   " \"BitMap 算法\""
 date:       2019-10-01 20:03:00
 author:     "BaiDong"
