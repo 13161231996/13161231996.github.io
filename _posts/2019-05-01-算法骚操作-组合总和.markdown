@@ -1,8 +1,8 @@
 ---
 
 layout:     post
-title:      "算法骚操作"
-subtitle:   " \"组合总和\""
+title:      "组合总和"
+subtitle:   " \"算法骚操作\""
 date:       2019-05-01 18:39:00
 author:     "BaiDong"
 header-img: "img/home-bg-art.jpg"
