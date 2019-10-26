@@ -1,7 +1,7 @@
 ---
 
 layout:     post
-title:      "KMP算法"
+title:      "KMP"
 subtitle:   " \"KMP 算法\""
 date:       2019-09-15 22:01:00
 author:     "BaiDong"
