@@ -1,8 +1,8 @@
 ---
 
 layout:     post
-title:      "算法骚操作"
-subtitle:   " \"二进制筛选2的幂\""
+title:      "二进制筛选2的幂"
+subtitle:   " \"算法骚操作\""
 date:       2019-04-15 18:39:00
 author:     "BaiDong"
 header-img: "img/home-bg-art.jpg"
