@@ -1,8 +1,8 @@
 ---
 
 layout:     post
-title:      "算法骚操作"
-subtitle:   " \"求众数\""
+title:      "求众数"
+subtitle:   " \"算法骚操作\""
 date:       2019-02-15 07:00:00
 author:     "BaiDong"
 header-img: "img/contact-bg.jpg"
