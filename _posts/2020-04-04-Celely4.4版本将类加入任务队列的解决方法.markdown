@@ -1,0 +1,184 @@
+---
+
+layout:     post
+title:      "Celery4.4版本遇到的坑与解决方法"
+subtitle:   " \"Celery4.4版本将类加入任务队列的解决方法\""
+date:       2020-04-04 14:23:00
+author:     "BaiDong"
+header-img: "img/home-bg-art.jpg"
+catalog: true
+tags:
+    - 坑及其解决方案
+---
+1.安装相关的依赖包
+
+    celert4.4版本 仅仅支持 python3.7及其以上，3.6,3.5 等等就不要想了
+
+    pip install celery
+    pip install msgpack-python
+    pip install eventlet
+
+2.安装redis
+
+    根据不同操作系统自行安装
+    windows 建议安装以.msi结尾的文件包，省去了启动redis的操作
+
+    http://www.redis.cn/download.html
+
+3.celery 文件配置
+
+    在工作目录下创建了一个单独的文件夹 celeryqueue
+    文件夹下创建了四个文件分别未 app_test.py,celeryconfig.py,tasks.py,__init__.py
+    __init__.py一定要创建，否则不能识别为包
+
+3.1 app_test.py
+
+    import sys,os,json
+    from celery import Celery
+    application = Celery()
+    application.config_from_object('celeryconfig')
+    if __name__ == '__main__':
+        application.start()
+
+3.2 celeryconfig.py
+
+    BROKER_URL = 'redis://localhost' # 使用Redis作为消息代理
+
+    CELERY_RESULT_BACKEND = 'redis://localhost:6379/0' # 把任务结果存在了Redis
+
+    CELERY_TASK_SERIALIZER = 'msgpack' # 任务序列化和反序列化使用msgpack方案
+
+    CELERY_RESULT_SERIALIZER = 'json' # 读取任务结果一般性能要求不高，所以使用了可读性更好的JSON
+
+    CELERY_TASK_RESULT_EXPIRES = 60 * 60 * 24 # 任务过期时间
+    CELERY_ACCEPT_CONTENT = ['json', 'msgpack'] # 指定接受的内容类型
+    #这个一定要加，否则会报 import 错误，找不到名字，bin.celeryqueue.tasks中的bin为我的主项目文件夹,其他的请自行替换,app_test为创建的app_test.py
+    CELERY_IMPORTS =("app_test","bin.celeryqueue.tasks")
+
+3.3 task.py
+
+    #导入的为app_test.py中定义的变量application
+    from bin.celeryqueue.app_test import application
+
+    #这个为自己写的文件，类下面有许多def 方法的文件，将其类名称导入
+    from write_baseline_handle import BaselineInformation
+
+    #将类注册到application中
+    application.register_task(BaselineInformation())
+
+    #如果有两个类就在导入一次，就像这样
+    application.register_task(aaaaaa())
+
+    #参数base为你的导入的那个类，但在类后面不要加()
+    @application.task(bind=True,base=BaselineInformation)
+    def custom(self,abnormal_id):
+        #这里调用的为你导入的类中的主方法，将所有方法串起来的方法
+        self.main()
+
+    #如果有第二个类的主方法就在写一次，比如下面
+    @application.task(bind=True,base=aaaaaa)
+    def custom_aaaa(self,abnormal_id):
+        #这里调用的为你导入的类中的主方法，将所有方法串起来的方法
+        self.main_aaaa()
+
+    if __name__ == "__main__":
+        pass
+
+3.4 __init_.py
+
+    什么都不用写，空着就好
+
+
+4.1 添加任务,创建app.py
+
+    #这里导入的为task.py中的方法
+    from celeryqueue.tasks import custom
+    from celeryqueue.tasks import custom_aaaa
+
+    #这里是向任务队列中添加任务
+    def diaoyong():
+        abnormal_id = 1
+        custom.delay(abnormal_id)
+        custom_aaaa.delay(abnormal_id)
+    if __name__ == "__main__":
+        diaoyong()
+
+5.1 创建主文件 write_baseline_handle.py
+    
+    #导入celery包中的Task
+    from celery import Task
+
+    #继承Task
+    class BaselineInformation(Task):
+        #tag方法是将abnormal_id除以2
+        def tag(self,abnormal_id):
+            return abnormal_id/2
+
+        #这个类的主方法,名字可以随便起，但是要和tasks.py文件中的调用的方法名字一样
+        #主方法调用tag方法做除法运算
+        def main(self,x):
+            result = self.tag(x)
+            print(result)
+
+6.1 celery启动命令
+
+    #在 app_test.py 所在的目录启动 -P 为异步队列 -c 为最多能启用多少个线程
+    python -m celery -A app_test worker -l info -P eventlet -c 1000
+
+    如果启动成功会出现如下的东西
+    -------------- celery@DESKTOP-DH1QMQF v4.4.2 (cliffs)
+    --- ***** -----
+    -- ******* ---- Windows-10-10.0.18362-SP0 2020-04-04 15:38:16
+    - *** --- * ---
+    - ** ---------- [config]
+    - ** ---------- .> app:         __main__:0x1d69b8e1978
+    - ** ---------- .> transport:   redis://localhost:6379//
+    - ** ---------- .> results:     redis://localhost:6379/0
+    - *** --- * --- .> concurrency: 1000 (eventlet)
+    -- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+    --- ***** -----
+    -------------- [queues]
+                    .> celery           exchange=celery(direct) key=celery
+
+
+    [tasks]
+    . bin.celeryqueue.tasks.BaselineInformation_main
+    . bin.celeryqueue.tasks.aaaaaa
+    . bin.celeryqueue.tasks.custom
+    . bin.celeryqueue.tasks.custom_aaaa
+
+    [2020-04-04 15:38:16,637: INFO/MainProcess] Connected to redis://localhost:6379//
+    [2020-04-04 15:38:16,660: INFO/MainProcess] mingle: searching for neighbors
+    [2020-04-04 15:38:17,716: INFO/MainProcess] mingle: all alone
+    [2020-04-04 15:38:17,741: INFO/MainProcess] celery@DESKTOP-DH1QMQF ready.
+    [2020-04-04 15:38:17,749: INFO/MainProcess] pidbox: Connected to redis://localhost:6379//.
+
+7.1 调用app.py
+
+    python app.py
+
+
+8.1 总结
+
+    方法类必须继承Task,在tasks.py文件中先将类使用application.register_task(aaaaaa()) 将aaaaa()这个类注册。
+    然后创建一个装饰器方法来调用aaaaa()中的main()方法。
+        @application.task(bind=True,base=aaaaaaa)
+        def custom_aaaa(self,abnormal_id):
+            #这里调用的为你导入的类中的主方法，将所有方法串起来的方法
+            self.main()
+    
+
+    未测试到的部分
+
+        注册类的时候传参
+        如 class  bb(Task):
+                def __init__(self,id):
+                    self.id=id
+                def tag(self):
+                    print(self.id)
+
+        在注册application.register_task(bb(id=1))  时传递参数不知道是否可行
+
+
+
+    如果是文件引出问题，自行百度解决
