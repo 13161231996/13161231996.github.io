@@ -12,7 +12,7 @@ tags:
 ---
 1.安装相关的依赖包
 
-    celert4.4版本 仅仅支持 python3.7及其以上，3.6,3.5 等等就不要想了
+    celert4.4版本 仅仅支持 python3.5及其以上
 
     pip install celery
     pip install msgpack-python
