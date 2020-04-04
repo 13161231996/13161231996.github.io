@@ -4,7 +4,7 @@ SEOTitle: 百东的博客 | BaiDong Blog
 header-img: img/home-bg.jpg
 email: 13161231996@163.com
 description: "关于Python | 尹百东，Web & Python Lover，Software Engineer | 这里是 @baidong 的个人博客，与你一起探索Python的世界。"
-keyword: "百东, Glittering百东, Glittering, 鬼栈, 百东的博客, BaiDong Blog, 博客, 个人网站, 互联网,Python,爬虫 Web, JavaScript, 前端, 设计"
+keyword: "百东, Glittering百东, Glittering, 鬼栈, 百东的博客, BaiDong Blog, 博客, 个人网站, 互联网,Python,爬虫 Web, JavaScript, Linux"
 url: "https://13161231996.github.io"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
