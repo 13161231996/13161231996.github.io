@@ -1,0 +1,87 @@
+---
+
+layout:     post
+title:      "Linux 各种命令"
+subtitle:   " \"Linux 各种命令\""
+date:       2020-06-15 18:23:00
+author:     "BaiDong"
+header-img: "img/home-bg-art.jpg"
+catalog: true
+tags:
+    - dokcer 各种命令
+---
+1.列出所有文件详细的权限与属性
+
+    ls -al 
+    d rwx r-x r-x
+
+    d   目录
+    -   文件
+    i   链接文件
+    b   可供存储的接口设备
+    c   串行端口设备，例如：键盘，鼠标
+
+2.改变文件属性及其权限
+
+    chgrp   改变文件所属用户组
+    chown   改变文件所有者
+    chmod   改变文件的权限
+
+3.回到上一次所在的位置
+
+    cd -
+
+4.创建多层文件夹
+
+    mkdir -p /test1/test2/test3
+
+5.查看文档最后20行
+
+    tail -n 20 xx.txt
+
+6.查看文档20行以后的内容
+
+    tail -n +20 xx.txt
+7.持续检测文件的内容
+
+    tail -f xx.txt
+8.文本替换
+
+    全文替换    
+    :1,$s/文本1/文本2/g
+    指定范围替换
+    :100,200s/文本1/文本2/g
+9.复制
+
+    复制光标所在那一行
+    yy
+    复制光标所在向下20行
+    20yy
+    复制光标所在行到最后一行数据
+    yG
+10.粘贴
+
+    向下粘贴
+    p
+    向上粘贴
+    P
+11.显示行号
+
+    :set nu
+12.取消行号
+
+    :set nonu
+13.将其他文件内容粘贴在当前文件所在光标处
+
+    :r xx.txt
+14.将10行至20行的文本保存成另一个文件
+    :10,20 w xx.txt
+
+15.将文本转换编码
+
+    将编码格式为big5的a.txt 转换为utf8编码的b.txt文件
+    iconv -f big5 -t utf8 a.txt -o b.txt
+16.查看系统所有正在内存中的进程
+
+    ps aux
+
