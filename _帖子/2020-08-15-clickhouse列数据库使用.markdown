@@ -29,6 +29,7 @@ tags:
     task = list()
     task.append(asyncio.create_task(CKgetconn(sql)))
     return await asyncio.gather(*task)
+    
 3.传入sql，启动协程
 
     def func():
