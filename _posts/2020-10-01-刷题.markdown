@@ -1,7 +1,7 @@
 ---
 
 layout:     post
-title:      "PostgreSql"
+title:      "Leetcode"
 subtitle:   " \"刷题""
 date:       2020-10-01 20:00:00
 author:     "BaiDong"
