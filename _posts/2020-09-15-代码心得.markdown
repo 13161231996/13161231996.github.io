@@ -1,0 +1,67 @@
+---
+
+layout:     post
+title:      "PostgreSql"
+subtitle:   " \"Golang个人心得""
+date:       2020-09-15 20:00:00
+author:     "BaiDong"
+header-img: "img/home-bg-art.jpg"
+catalog: true
+tags:
+    - Postgres
+---
+
+GoLang实现Python中的set集合 [Golang-Set](https://github.com/13161231996/-Python-Golang-Set)
+
+        Golang 学习中发现没有像python一样的set可以自动去重的集合，所以打算自己实现一个，但不知道如何下手，在github上找到了一位大佬写的。
+        
+附上链接[大佬版Golang-Set](https://github.com/deckarep/golang-set)
+
+        读完代码，原来的在map的基础上增加功能，瞬间明了，感谢大佬。自己臭不要脸的在原版的基础上做了写小改动。望多包涵
+
+以下为代码示例:
+
+        requiredClasses := mapset.NewSet()
+        requiredClasses.Add("Cooking")
+        requiredClasses.Add("English")
+        requiredClasses.Add("Math")
+        requiredClasses.Add("Biology")
+
+        scienceSlice := []interface{}{"Biology", "Chemistry"}
+        scienceClasses := mapset.NewSetFromSlice(scienceSlice)
+
+        electiveClasses := mapset.NewSet()
+        electiveClasses.Add("Welding")
+        electiveClasses.Add("Music")
+        electiveClasses.Add("Automotive")
+
+        bonusClasses := mapset.NewSet()
+        bonusClasses.Add("Go Programming")
+        bonusClasses.Add("Python Programming")
+
+        //Show me all the available classes I can take
+        allClasses := requiredClasses.Union(scienceClasses).Union(electiveClasses).Union(bonusClasses)
+        fmt.Println(allClasses) //Set{Cooking, English, Math, Chemistry, Welding, Biology, Music, Automotive, Go Programming, Python Programming}
+
+
+        //Is cooking considered a science class?
+        fmt.Println(scienceClasses.Contains("Cooking")) //false
+
+        //Show me all classes that are not science classes, since I hate science.
+        fmt.Println(allClasses.Difference(scienceClasses)) //Set{Music, Automotive, Go Programming, Python Programming, Cooking, English, Math, Welding}
+
+        //Which science classes are also required classes?
+        fmt.Println(scienceClasses.Intersect(requiredClasses)) //Set{Biology}
+
+        //How many bonus classes do you offer?
+        fmt.Println(bonusClasses.Cardinality()) //2
+
+        //Do you have the following classes? Welding, Automotive and English?
+        fmt.Println(allClasses.IsSuperset(mapset.NewSetFromSlice([]interface{}{"Welding", "Automotive", "English"}))) //true
+
+谢谢！
+-百东
+        
+
+    
+
