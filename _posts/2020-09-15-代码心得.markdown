@@ -2,7 +2,7 @@
 
 layout:     post
 title:      "Golang"
-subtitle:   " \"Golang个人心得""
+subtitle:   " \"Golang个人心得\""
 date:       2020-09-15 20:00:00
 author:     "BaiDong"
 header-img: "img/home-bg-art.jpg"
