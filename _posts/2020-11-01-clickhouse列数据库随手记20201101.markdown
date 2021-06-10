@@ -1,0 +1,140 @@
+---
+
+layout:     post
+title:      "clickhouse随手记录ReplacingMergeTree"
+subtitle:   " \"clickhouse随手记录ReplacingMergeTree\""
+date:       2020-11-01 19:23:00
+author:     "BaiDong"
+header-img: "img/home-bg-art.jpg"
+catalog: true
+tags:
+    - 列数据库
+---
+
+一、ReplacingMergeTree作用
+
+    ​ ClickHouse中最常用也是最基础的表引擎为MergeTree，在它的功能基础上添加特定功能就构成了MergeTree系列引擎。MergeTree支持主键，但主键主要用来缩小查询范围，且不具备唯一性约束，可以正常写入相同主键的数据。但在一些情况下，可能需要表中没有主键重复的数据。ReplacingMergeTree就是在MergeTree的基础上加入了去重的功能，但它仅会在合并分区时，去删除重复的数据，写入相同数据时并不会引发异常。
+
+二、功能示例
+
+    创建一张ReplacingMergeTree的表和创建MergeTree类似，修改引擎即可。ReplacingMergeTree引擎创建规范为：ENGINE = ReplacingMergeTree([ver])，其中ver为选填参数，它需要指定一个UInt8/UInt16、Date或DateTime类型的字段，它决定了数据去重时所用的算法，如果没有设置该参数，合并时保留分组内的最后一条数据；如果指定了该参数，则保留ver字段取值最大的那一行。
+
+1、不指定ver参数
+
+    -- 创建未指定ver参数ReplacintMergeTree引擎的表
+    CREATE TABLE replac_merge_test
+    (
+        `id` String, 
+        `code` String, 
+        `create_time` DateTime
+    )
+    ENGINE = ReplacingMergeTree()
+    PARTITION BY toYYYYMM(create_time)
+    PRIMARY KEY id
+    ORDER BY (id, code)
+
+    ReplacingMergeTree会根据ORDER BY所声明的表达式去重
+
+-- 在上述表中插入数据
+
+    insert into replac_merge_test values ('A000', 'code1', now()),('A000', 'code1', '2020-07-28 21:30:00'), ('A001', 'code1', now()), ('A001', 'code2', '2020-07-28 21:30:00'), ('A0002', 'code2', now());
+-- 查询当前数据
+
+    select * from replac_merge_test;
+    ┌─id────┬─code──┬─────────create_time─┐
+    │ A000  │ code1 │ 2020-07-28 21:23:48 │
+    │ A000  │ code1 │ 2020-07-28 21:30:00 │
+    │ A0002 │ code2 │ 2020-07-28 21:23:48 │
+    │ A001  │ code1 │ 2020-07-28 21:23:48 │
+    │ A001  │ code2 │ 2020-07-28 21:30:00 │
+    └───────┴───────┴─────────────────────┘
+
+-- 强制进行分区合并
+
+    optimize table replac_merge_test FINAL;
+-- 再次查询数据
+
+    select * from replac_merge_test;
+    ┌─id────┬─code──┬─────────create_time─┐
+    │ A000  │ code1 │ 2020-07-28 21:30:00 │
+    │ A0002 │ code2 │ 2020-07-28 21:23:48 │
+    │ A001  │ code1 │ 2020-07-28 21:23:48 │
+    │ A001  │ code2 │ 2020-07-28 21:30:00 │
+    └───────┴───────┴─────────────────────┘
+
+    通过上面示例可以看到，id、code相同的字段’A000’,'code1’被去重剩余一条数据，由于创建表时没有设置ver参数，故保留分组内的最后一条数据(create_time字段)
+
+-- 再次使用insert插入一条数据
+
+    insert into replac_merge_test values ('A001', 'code1', '2020-07-28 21:30:00');
+
+-- 查询表中数据
+
+    select * from replac_merge_test;
+    ┌─id────┬─code──┬─────────create_time─┐
+    │ A000  │ code1 │ 2020-07-28 21:30:00 │
+    │ A0002 │ code2 │ 2020-07-28 21:23:48 │
+    │ A001  │ code1 │ 2020-07-28 21:23:48 │
+    │ A001  │ code2 │ 2020-07-28 21:30:00 │
+    └───────┴───────┴─────────────────────┘
+    ┌─id───┬─code──┬─────────create_time─┐
+    │ A001 │ code1 │ 2020-07-28 21:30:00 │
+    └──────┴───────┴─────────────────────┘
+
+    可以看到，再次插入重复数据时，查询仍然会存在重复。在ClickHouse中，默认一条insert插入的数据为同一个数据分区，不同insert插入的数据为不同的分区，所以ReplacingMergeTree是以分区为单位进行去重的，也就是说只有在相同的数据分区内，重复数据才可以被删除掉。只有数据合并完成后，才可以使用引擎特性进行去重。
+
+2、指定ver参数
+
+    创建指定ver参数ReplacingMergeTree引擎的表
+    CREATE TABLE replac_merge_ver_test
+    (
+        `id` String, 
+        `code` String, 
+        `create_time` DateTime
+    )
+    ENGINE = ReplacingMergeTree(create_time)
+    PARTITION BY toYYYYMM(create_time)
+    PRIMARY KEY id
+    ORDER BY (id, code)
+
+-- 插入测试数据
+
+    insert into replac_merge_ver_test values('A000', 'code1', '2020-07-10 21:35:30'),('A000', 'code1', '2020-07-15 21:35:30'),('A000', 'code1', '2020-07-05 21:35:30'),('A000', 'code1', '2020-06-05 21:35:30');
+
+-- 查询数据
+
+    select * from replac_merge_ver_test;
+    ┌─id───┬─code──┬─────────create_time─┐
+    │ A000 │ code1 │ 2020-06-05 21:35:30 │
+    └──────┴───────┴─────────────────────┘
+    ┌─id───┬─code──┬─────────create_time─┐
+    │ A000 │ code1 │ 2020-07-10 21:35:30 │
+    │ A000 │ code1 │ 2020-07-15 21:35:30 │
+    │ A000 │ code1 │ 2020-07-05 21:35:30 │
+    └──────┴───────┴─────────────────────┘
+
+-- 强制进行分区合并
+
+    optimize table replac_merge_ver_test FINAL;
+
+-- 查询数据
+
+    select * from replac_merge_ver_test;
+    ┌─id───┬─code──┬─────────create_time─┐
+    │ A000 │ code1 │ 2020-07-15 21:35:30 │
+    └──────┴───────┴─────────────────────┘
+    ┌─id───┬─code──┬─────────create_time─┐
+    │ A000 │ code1 │ 2020-06-05 21:35:30 │
+    └──────┴───────┴─────────────────────┘
+
+    由于上述创建表是以create_time的年月来进行分区的，可以看出不同的数据分区，ReplacingMergeTree并不会进行去重，并且在相同数据分区内，指定ver参数后，会保留同一组数据内create_time时间最大的那一行数据。
+
+三、ReplacingMergeTree引擎总结
+
+    使用ORDER BY排序键，作为判断数据是否重复的唯一键
+    只有在合并分区时，才会触发数据的去重逻辑
+    删除重复数据，是以数据分区为单位。同一个数据分区的重复数据才会被删除，不同数据分区的重复数据仍会保留
+    在进行数据去重时，由于已经基于ORDER BY排序，所以可以找到相邻的重复数据
+    数据去重策略为：
+    若指定了ver参数，则会保留重复数据中，ver字段最大的那一行
+    若未指定ver参数，则会保留重复数据中最末的那一行数据
